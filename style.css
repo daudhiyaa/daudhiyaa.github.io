@@ -1,0 +1,227 @@
+:root{
+    --main-color: #350048;
+    --purple-white: #5d2970;
+    --purple-black: #421353;
+    /* --main-color: #450039;
+    --purple-white: #5a0a4c;
+    --purple-black: #37002e; */
+    --white: #fff;
+    --gray-rgba: rgba(255,255,255,0.05);
+    --black-rgba: rgba(0, 0, 0, 0.2);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* html{
+    animation: animate 8s linear infinite;
+} */
+
+body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background: 
+        var(--main-color);
+        /* linear-gradient(to left, var(--main-color), var(--purple-white)); */
+}
+
+.container{
+    margin: 2em;
+    background: 
+        var(--main-color);
+        /* linear-gradient(to left, var(--main-color), var(--purple-white)); */
+
+    min-height: 90vh;
+    padding-bottom: 2.5em;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 70px 30px var(--black-rgba);
+    
+}
+
+/* PHOTO PROFILE */
+.profile{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.circleImg{
+    position: relative;
+    width: 130px; height: 130px;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 50%;
+    /* animation: animate 8s linear infinite; */
+    background: 
+        /* var(--main-color); */
+        linear-gradient(45deg, var(--main-color), var(--purple-white));
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+                inset 2px 2px 3px rgba(255, 255, 255, 0.25),
+                inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.imgBox{
+    position: relative;
+    width: 100px; height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: var(--white);
+}
+
+img{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CONNECT WITH ME */
+h2{
+    color: var(--white);
+    font-weight: 400;
+    text-align: center;
+}
+
+.socmed{
+    height: 3em;
+    /* background: var(--white); */
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.socmed .circle{
+    width: 2.5em; height:2.5em;
+    /* background: black; */
+    border-radius: 50%;
+    margin-inline: 5px;
+    display: flex;
+    justify-content: center;
+    /* transition: .2s; */
+    cursor: pointer;
+}
+
+.socmed .circle:hover{
+    position: relative;
+    background: var(--white);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+                inset 2px 2px 3px rgba(255, 255, 255, 0.25),
+                inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.socmed .circle:hover a{
+    color: var(--main-color);
+}
+
+.socmed .circle a{
+    text-decoration: none;
+    font-size: 1.5em;
+    color: var(--white);
+    margin: 5.5px 0 0 1px; /* margin-top , margin-right , margin-bottom dan margin-left */
+    /* transition: .2s; */
+    /* transform: translateY(5.3px); */
+    /* background: rebeccapurple; */
+}
+
+/* LIST */
+.menu_list{
+    position: relative;
+    /* padding: 100px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* background: white; */
+}
+
+.menu_list li{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    border-radius: 15px;
+    width: 90%;
+    /* background: rebeccapurple; */
+}
+
+.menu_list li a{
+    text-transform: capitalize;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    color: var(--white);
+    font-weight: 100;
+    letter-spacing: .5px;
+    padding: 13px;
+    width: 70%; height: 3em;
+    justify-content: center;
+    text-align: center;
+    transition: .5s;
+
+    background: var(--gray-rgba);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px var(--black-rgba);
+
+    z-index: 1;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+}
+
+.menu_list li:hover a{
+    background-color: var(--main-color);
+    letter-spacing: 3px;
+    width: 100%;
+    /* box-shadow: none; */
+}
+
+.menu_list li a::before{
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255,255,255,0.15), transparent);
+    transform: skewX(45deg) translateX(0);
+    transition: 0.5s;
+}
+
+.menu_list li:hover a::before{
+    transform: skewX(45deg) translateX(200%);
+}
+
+@keyframes animate {
+    0% {
+        filter: hue-rotate(0deg);
+        /* filter: brightness(0.8); */
+    }
+    50% {
+        /* filter: brightness(1.1); */
+        filter: hue-rotate(20deg);
+    }
+    100% {
+        filter: hue-rotate(0deg);
+        /* filter: brightness(0.8); */
+    }
+}
+
+@media (max-width:620px){
+    .menu_list li:nth-child(5) a,
+    .menu_list li:nth-child(6) a{
+        height: 4em;
+        /* padding-top: 20px; */
+    }
+}
